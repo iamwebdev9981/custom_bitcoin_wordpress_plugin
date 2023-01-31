@@ -1,0 +1,76 @@
+/* Google font open sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+
+/* Admin dashboard style css */
+.logo-box{
+width: 326px;
+}
+.logo-box h3{
+	
+	border-radius: 5px;
+	color: #fff!important;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+
+.trua-text{
+	background: black;
+	border:1px solid rgba(0, 0, 0, 0.9);
+	padding-bottom: 3px;
+}
+
+.pay-text{
+	background: #fff;
+	color: #000!important;
+	border-bottom:1px solid rgba(0, 0, 0, 0.9);
+	border-top:1px solid rgba(0, 0, 0, 0.9);
+	border-right:1px solid rgba(0, 0, 0, 0.9);
+	padding-right: 5px;
+	border-radius: 0px 5px 5px 0px;
+	padding-left: 5px;
+	padding-bottom: 3px;
+}
+
+.logo_text{
+	color: red;
+	background: black;
+	padding-left: 5px;
+	border:1px solid rgba(0, 0, 0, 0.9);
+	border-radius: 5px 0px 0px 5px;
+	padding-bottom: 3px;
+}
+
+
+.test-payment-container table{
+   font-size: 13px!important;
+   font-family: 'Open Sans', sans-serif!important;
+}
+
+.test-payment-container table a{
+  box-shadow: none!important;
+}
+
+
+/*invoice page design */
+.pay-box-main{
+  padding: 20px 80px!important;
+}
+
+.pay-box-main .col-right{
+  padding-top: 30px!important;
+}
+
+.invoice-logo-box{
+    height: 46px;
+    width: 85%;
+    margin-bottom: 20px;
+}
+
+.invoice-logo-box img{
+	height: 100%;
+	width: 100%;
+}
