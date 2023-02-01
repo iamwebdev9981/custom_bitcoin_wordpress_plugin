@@ -23,7 +23,8 @@
     $wp_c_bit_api = $table_prefix.'c_bit_api';
     @$result = $wpdb->get_results("SELECT * FROM $wp_c_bit_api");
     @$fetch_apikey  = $result[0]->api;
-    define('API',@$fetch_apikey);
+
+    define('API',$fetch_apikey);
     define('API_URL','https://www.blockonomics.co/api/');
  
    
@@ -133,8 +134,6 @@ register_deactivation_hook(__FILE__, 'c_bitcoin_plugin_deactivation');
 
 
 
-
-
 function custom_bitcoin_admin_menu() {
 
    add_menu_page( 'Bitcoin', 'Truamore Pay', 'read', 'Bitcoin',  'custom_bitcoin_admin_action',C_BITCOIN_URL . 'media/bitcoin_icon.svg');
@@ -156,6 +155,74 @@ function custom_bitcoin_admin_invoice_action(){
 
 
 add_action('admin_menu', 'custom_bitcoin_admin_menu');
+
+
+/*
+ * ----------------------------------------------------------
+ * # TEMPLATE 
+ * ----------------------------------------------------------
+ *
+ */
+
+  function my_template_array()
+  {
+    $temp = [];
+    $temps['my-special-template.php'] = 'My Special Template';
+    $temps['truamore-payment.php'] = 'Truamore Payment';
+    return $temps;
+  }
+
+  function my_template_register($page_templates,$theme,$post)
+  {
+    $templates  = my_template_array();
+    foreach($templates as $tk => $tv)
+    {
+      $page_templates[$tk] = $tv;
+    }
+     return $page_templates;
+  }
+
+  add_filter('theme_page_templates','my_template_register',10,3);
+
+
+  function my_template_select($template)
+  {
+    global $post, $wp_query, $wpdb;
+    $page_temp_slug = get_page_template_slug(@$post->ID,$wp_query);
+
+    $templates = my_template_array();
+    
+    if(isset($templates[$page_temp_slug]))
+    {
+       $template = plugin_dir_path(__FILE__).'template/'.$page_temp_slug;
+    }
+
+    //echo '<pre>Preformatted';print_r($page_temp_slug);echo '</pre>';
+    return $template;
+
+  }
+  add_filter('template_include','my_template_select',99);
+
+
+
+/*
+ * ----------------------------------------------------------
+ * # SHORTCODE 
+ * ----------------------------------------------------------
+ *
+ */
+
+ // The shortcode function
+function wpb_demo_shortcode_2() { 
+  
+// Advertisement code pasted inside a variable
+$string = "";
+
+return $string; 
+  
+}
+// Register shortcode
+add_shortcode('my_ad_code', 'wpb_demo_shortcode_2'); 
 
 
  ?>

@@ -72,7 +72,6 @@ function getPrice($id){
     global $wpdb,$table_prefix;
     $wp_products  = $table_prefix.'c_bit_products';
     
-    echo $id;
     $result = $wpdb->get_row("SELECT * FROM $wp_products WHERE id='".$id."' ");
     $price =  $result->price;
 
