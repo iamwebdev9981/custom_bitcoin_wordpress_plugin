@@ -64,7 +64,7 @@ if(isset($_POST['del_api'])){
 			<form action="" method="post">
 				<input type="submit" style="<?php if(isset($f_api)){echo 'display:block';}else{echo 'display:none';} ?>" class="btn-danger border border-danger btn  shadow-none" name="del_api"  id="" value="Remove Api Key">
 			</form>
-			<div class="container-fluid p-0 mt-5 test-payment-container">
+			<!-- <div class="container-fluid p-0 mt-5 test-payment-container">
 				<h5>Test Payment</h5>
 				<div class="table-responsive">
 					<table class="table">
@@ -79,22 +79,22 @@ if(isset($_POST['del_api'])){
 						</thead>
 						<tbody>
 							<?php
-							$result = $wpdb->get_results("SELECT * FROM $wp_products");
-							foreach ($result as $value) { ?>
+					//		$result = $wpdb->get_results("SELECT * FROM $wp_products");
+					//		foreach ($result as $value) { ?>
 							<tr>
-								<td><?php echo $value->id ?></td>
-								<td><?php echo $value->name ?></td>
-								<td><?php echo $value->description ?></td>
-								<td class="text-primary font-weight-bold"><?php echo $value->price ?></td>
+								<td><?php // echo $value->id ?></td>
+								<td><?php // echo $value->name ?></td>
+								<td><?php // echo $value->description ?></td>
+								<td class="text-primary font-weight-bold"><?php // echo $value->price ?></td>
 								<td>
-									<a href="admin.php?page=buy&id=<?php echo $value->id; ?>" style="text-decoration: none;" class="btn-sm border border-success btn-outline-success">Test now</a>
+									<a href="admin.php?page=buy&id=<?php // echo $value->id; ?>" style="text-decoration: none;" class="btn-sm border border-success btn-outline-success">Test now</a>
 								</td>
 							</tr>
-							<?php } ?>
+							<?php // } ?>
 						</tbody>
 					</table>
 				</div>
-			</div>
+			</div> -->
 			
 		</div>
 		<div class="col-sm-12 col-lg-6 col-md-6">

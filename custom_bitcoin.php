@@ -137,21 +137,21 @@ register_deactivation_hook(__FILE__, 'c_bitcoin_plugin_deactivation');
 function custom_bitcoin_admin_menu() {
 
    add_menu_page( 'Bitcoin', 'Truamore Pay', 'read', 'Bitcoin',  'custom_bitcoin_admin_action',C_BITCOIN_URL . 'media/bitcoin_icon.svg');
-   add_submenu_page('Bitcoin', 'Settings', 'Buy', 'manage_options', 'buy', 'custom_bitcoin_admin_buy_action');
-   add_submenu_page('Bitcoin', 'Settings', 'invoice', 'manage_options', 'invoice', 'custom_bitcoin_admin_invoice_action');
+   add_submenu_page('Bitcoin', 'orders_list', 'Orders', 'manage_options', 'orders_list', 'custom_bitcoin_admin_orders_list');
+   // add_submenu_page('Bitcoin', 'Settings', 'invoice', 'manage_options', 'invoice', 'custom_bitcoin_admin_invoice_action');
 }
 
 function custom_bitcoin_admin_action(){
    include('admin/dashboard.php');
 }
 
-function custom_bitcoin_admin_buy_action(){
-   include('admin/buy.php');
+function custom_bitcoin_admin_orders_list(){
+   include('admin/orders.php');
 }
 
-function custom_bitcoin_admin_invoice_action(){
-   include('admin/invoice.php');
-}
+// function custom_bitcoin_admin_invoice_action(){
+//    include('admin/invoice.php');
+// }
 
 
 add_action('admin_menu', 'custom_bitcoin_admin_menu');
